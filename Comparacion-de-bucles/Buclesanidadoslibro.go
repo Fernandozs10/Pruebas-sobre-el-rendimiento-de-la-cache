@@ -16,7 +16,9 @@ func main() {
 		{1, 2, 3, 4},
 	}
 	x := [MAX]float64{1, 2, 3, 4}
-	var y [MAX]float64 // Inicializado automáticamente en 0
+
+	// Inicializado y en 0
+	var y [MAX]float64 
 
 	// Primer bucle
 	start1 := time.Now()
@@ -25,8 +27,9 @@ func main() {
 			y[i] += A[i][j] * x[j]
 		}
 	}
-	time1 := time.Since(start1).Milliseconds() // Medir tiempo en ms
-
+	// Medir tiempo en ms
+	time1 := time.Since(start1).Milliseconds() 
+	
 	// Reiniciar y
 	for i := 0; i < MAX; i++ {
 		y[i] = 0
@@ -39,8 +42,10 @@ func main() {
 			y[i] += A[i][j] * x[j]
 		}
 	}
-	time2 := time.Since(start2).Milliseconds() // Medir tiempo en ms
-
+	
+	// Medir tiempo en ms
+	time2 := time.Since(start2).Milliseconds() 
+	
 	// Comparación de tiempos
 	fmt.Printf("Bucle 1: %d ms\n", time1)
 	fmt.Printf("Bucle 2: %d ms\n", time2)
